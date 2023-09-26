@@ -3,7 +3,7 @@ import BackGround from "../../components/Wrapper/BackGround/BackGround";
 import Container from "../../components/Wrapper/Container/Container";
 import {useForm} from "react-hook-form";
 
-import styles from "./usersstyles.module.scss"
+import styles from "./Users.module.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBan, faBookmark} from "@fortawesome/free-solid-svg-icons";
 import {fetchGet} from "../../utils/Axios/axiosFunctions";
