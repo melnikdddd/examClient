@@ -247,7 +247,7 @@ function Market(props) {
         return <BackGround background={"linear-gradient(270deg, #8BC6EC 0%, #9599E2 100%)"}>
             <Container>
                 <CenterWrapper>
-                    <LoadingBlock className={"h-24 w-24"}/>
+                    <LoadingBlock className={"h-32"}/>
                 </CenterWrapper>
             </Container>
         </BackGround>

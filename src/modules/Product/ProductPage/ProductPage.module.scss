@@ -1,0 +1,113 @@
+.coreWrap {
+    @apply bg-white flex flex-col shadow-lg rounded-lg mt-6 p-10;
+    @media (max-width: 800px) {
+        @apply p-5;
+    }
+    @media (max-width: 500px) {
+        @apply p-3;
+    }
+    @media (max-width: 350px) {
+        @apply p-1;
+    }
+}
+
+
+.topContent {
+    @apply flex justify-between;
+    @media (max-width: 800px) {
+        @apply flex-col items-center w-full;
+    }
+
+    .price {
+        @apply mt-10 text-xl;
+        @media (max-width: 800px) {
+            @apply mt-3;
+        }
+    }
+
+    .cover {
+        @apply rounded-lg;
+        @media (max-width: 800px) {
+            @apply w-full;
+        }
+    }
+
+    .editButton {
+        @apply flex justify-center mt-12;
+        @media (max-width: 800px) {
+            @apply mt-5;
+        }
+    }
+
+    .userInformation {
+        @apply flex flex-col;
+
+        @media (max-width: 800px) {
+            @apply mt-4 w-full items-center rounded-lg py-3;
+        }
+    }
+
+    .topInf {
+        @apply text-center ml-10 text-slate-600 flex flex-col px-5 justify-start w-56;
+        @media (max-width: 800px) {
+            @apply ml-0 mt-2;
+        }
+    }
+
+    .topInformation {
+        @apply flex;
+        @media (max-width: 800px) {
+            @apply flex-col items-center;
+        }
+    }
+}
+
+.middleContent {
+    @apply flex justify-around mt-7 break-words gap-x-5;
+    @media (max-width: 852px) {
+        @apply flex-col mt-0;
+    }
+
+    .productText {
+        @apply flex flex-col w-1/2;
+        @media (max-width: 852px) {
+            @apply w-full mt-5;
+
+        }
+    }
+}
+
+.bottomContent {
+    @apply flex justify-between items-center border-t border-gray-400 mt-5;
+    @media (max-width: 510px) {
+        @apply flex-col justify-between;
+    }
+
+    .hideBlock {
+        @apply hidden;
+        @media (max-width: 510px) {
+            display: block;
+            @apply w-full flex justify-between items-center;
+        }
+    }
+
+    .hiddenInfo {
+        @media (max-width: 510px) {
+            @apply hidden;
+        }
+    }
+
+    .ratingButtons {
+        @media (max-width: 510px) {
+            @apply order-3;
+            border: none;
+        }
+
+        .buttons {
+            @apply min-h-[40px];
+            @media (max-width: 510px) {
+                border: none;
+            }
+        }
+    }
+}

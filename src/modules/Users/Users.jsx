@@ -190,7 +190,7 @@ function Users(props) {
             <BackGround background={"linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%)"}>
                 <Container>
                     <CenterWrapper>
-                        <LoadingBlock className={"text-slate-500 h-32"}/>
+                        <LoadingBlock className={"h-32"}/>
                     </CenterWrapper>
                 </Container>
             </BackGround>
