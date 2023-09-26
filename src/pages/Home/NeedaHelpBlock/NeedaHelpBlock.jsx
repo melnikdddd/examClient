@@ -6,15 +6,15 @@ import styles from "./style.module.scss";
 
 function NeedaHelpBlock(props) {
     return (
-        <div id={props.id} className={"bg-yellow-400 text-black  h-[70vh] w-full pb-2"}>
+        <div id={props.id} className={"bg-yellow-400 text-black  h-[70vh] min-h-[320px] w-full"}>
             <Container>
-                <div className={"flex flex-col justify-around"}>
+                <div className={"flex flex-col justify-around h-full"}>
                     <div className={"flex justify-end mt-10"}>
                         <h1 className={"text-3xl"}>Need a help?</h1>
                     </div>
                     <CenterWrapper>
                         <div className={"flex flex-col items-center"}>
-                            <div className={"mt-10"}>
+                            <div className={"my-10"}>
                                 <p className={"text-lg"}>Check the
                                     <span className={"font-bold"}> FAQ </span>
                                     or try <span className={"font-bold"}> call </span>

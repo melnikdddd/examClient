@@ -14,7 +14,7 @@
     }
 }
 .leftCard{
-    @apply flex border rounded-lg flex-col px-6 py-2 bg-white shadow-md items-center justify-center max-h-[420px] ;
+    @apply flex  rounded-lg flex-col px-6 py-2 bg-white shadow-md items-center justify-center max-h-[420px] ;
 
     @media (max-width: 850px) {
         @apply w-full flex-row px-16 pb-5 pt-2 justify-between;

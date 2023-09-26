@@ -10,9 +10,12 @@
 }
 
 .buttonWrap{
-  @apply flex justify-around w-full mt-20;
+  @apply flex justify-around w-full mt-10;
 
   @media (max-width: 500px){
-    @apply flex-col gap-3;
+    @apply flex-col gap-3 mt-2;
+  }
+  @media (max-width: 320px){
+    @apply flex-col gap-3 mt-0;
   }
 }
