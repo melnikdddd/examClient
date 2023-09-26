@@ -9,7 +9,7 @@ const Socket = class {
 
     createConnect = (user, dispatch) => {
         if (user) {
-            this.socket = io.connect("http://localhost:8000");
+            this.socket = io.connect(process.env.REACT_APP_API_URL);
             const {
                 _id,
                 userAvatar,
