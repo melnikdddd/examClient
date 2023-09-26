@@ -86,7 +86,6 @@
   .hideBlock {
     @apply hidden;
     @media (max-width: 510px) {
-      display: block;
       @apply w-full flex justify-between items-center;
     }
   }
@@ -99,14 +98,13 @@
 
   .ratingButtons {
     @media (max-width: 510px) {
-      @apply order-3;
-      border: none;
+      @apply order-3 border-none;
     }
 
     .buttons {
       @apply min-h-[40px];
       @media (max-width: 510px) {
-        border: none;
+        @apply border-none;
       }
     }
   }
