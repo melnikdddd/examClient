@@ -4,7 +4,7 @@ import {faCircle, faEllipsisVertical, faGear, faLocationDot} from "@fortawesome/
 import {Link, NavLink} from "react-router-dom";
 import LogoutButton from "../../../../components/Buttons/LogoutButton/LogoutButton";
 import moment from "moment";
-import styles from "./UserProfile.module.scss"
+import "./UserProfile.css"
 import RatingButtons from "../../../../components/Buttons/RatingButton/RatingButtons";
 import {useEffect, useState} from "react";
 import ProfileOptions from "../ProfileOptions/ProfileOptions";
@@ -62,14 +62,14 @@ function UserProfileData(props) {
 
 
     return (
-        <div className={styles.wrapper}>
-            <div className={styles.leftCard}>
+        <div className={"wrapper"}>
+            <div className={"leftCard"}>
                 <UserAvatar image={data.user.userAvatar}
-                            className={styles.userAvatar}
+                            className={"userAvatar"}
                             isOwner={data.isOwner}
                             isImageNeedDecoding={!data.isOwner}
                 />
-                <div className={`${styles.userText}`} style={{minWidth: "190px"}}>
+                <div className={`userText`} style={{minWidth: "190px"}}>
                     <span className={"text-2xl flex-1 mr-0.5"}>{data.user.firstname} {data.user.lastname}</span>
                     <div>
                         <p className={"text-lg"}>{data.user.nickname}</p>
@@ -80,8 +80,8 @@ function UserProfileData(props) {
                     </span>
                     </div>
                 </div>
-                <div className={styles.buttonsWrap}>
-                    <div className={styles.buttons}>
+                <div className={"buttonsWrap"}>
+                    <div className={"buttons"}>
                         {isOwner ?
                             <>
                                 <Link to={`/users/${user._id}/setting`}
@@ -101,7 +101,7 @@ function UserProfileData(props) {
                                               isChatSelect: true,
                                               user: data.user
                                           }}
-                                          className={styles.messageLink}
+                                          className={"messageLink"}
                                           disabled={isBlocked}>
                                         Message
                                     </Link>
@@ -118,7 +118,7 @@ function UserProfileData(props) {
                                                     owner={data.owner}
                                                     isBlocked={data.isBlocked}
                                                     setIsBlocked={data.setIsBlocked}
-                                                    className={styles.profileOptions}
+                                                    className={"profileOptions"}
                                     />
                                 }
                             </>
@@ -129,11 +129,11 @@ function UserProfileData(props) {
             </div>
 
             {isBlocked ?
-                <div className={`${styles.rightCard} ${styles.blocked}`}>
+                <div className={`rightCard blocked`}>
                     <h1 className={"text-center text-2xl"}>{data.user.firstname} is blocked.</h1>
                 </div>
                 :
-                <div className={styles.rightCard}>
+                <div className={"rightCard"}>
                     <div className={"w-full p-4"}>
                         <p className={"text-slate-500"}>
                             Status:
@@ -175,8 +175,8 @@ function UserProfileData(props) {
                         {data.user.aboutUser ? data.user.aboutUser : 'Not indicated.'}
                     </span>
                     </div>
-                    <div className={styles.inform}>
-                        <div className={styles.createdAtWrap}>
+                    <div className={"inform"}>
+                        <div className={"createdAtWrap"}>
                             <p className={"text-slate-600 text-lg"}>Last active:</p>
                             <span className="text-slate-900 text-lg">
                             {lastOnline}
@@ -188,7 +188,7 @@ function UserProfileData(props) {
                                        ownerId={data.owner._id}
                                        entity={`users`}/>
 
-                        <div className={styles.sinceWrap}>
+                        <div className={"sinceWrap"}>
                             <p className={"text-slate-600 text-lg"}>Since:</p>
                             <span className="text-slate-900 text-lg">
                         {moment(data.user.createdAt).format("DD-MM-YYYY")}
