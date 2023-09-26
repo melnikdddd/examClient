@@ -1,0 +1,22 @@
+.closeButton{
+  @apply h-5 w-5 border border-gray-400 p-1 bg-gray-100
+  hover:bg-gray-200 hover:text-red-600
+  cursor-pointer transition-colors rounded-tr-lg;
+  border-bottom-left-radius: 10px;
+  border-top: none;
+  border-right: none;
+}
+
+.notificationItem{
+  @apply bg-white shadow-md w-full rounded-lg  mt-4 mb-2;
+  direction: ltr;
+}
+
+.popup{
+  @apply shadow-2xl bg-slate-50;
+  visibility: visible;
+}
+
+.popupButton{
+  @apply bg-opacity-50 border-gray-400;
+}

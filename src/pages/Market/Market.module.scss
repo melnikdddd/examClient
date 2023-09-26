@@ -1,0 +1,68 @@
+.wrap {
+  @apply min-h-[80vh] rounded-lg flex flex-col mt-7 bg-white shadow-lg;
+}
+
+.filterBlock {
+  @apply flex flex-col w-full max-w-[291px] border-r border-gray-400 rounded-l-lg;
+  @media (max-width: 700px) {
+    @apply w-[250px]
+  }
+  @media (max-width: 500px) {
+    @apply w-[120px]
+  }
+
+  .filterButton {
+    @apply text-lg text-center w-full h-full py-3 transition-colors cursor-pointer rounded-tl-lg bg-slate-100;
+    &:not(.selected) {
+      @apply hover:bg-slate-200 hover:text-blue-400;
+    }
+
+    &.selected {
+      @apply text-blue-500 bg-slate-300;
+    }
+  }
+
+  .filters {
+    @apply absolute flex-col w-[291px] bg-black  bg-opacity-70 rounded-b-lg z-10;
+    margin-top: 52px;
+
+    .filtersBlock {
+      @apply border border-gray-400 px-2 py-4 w-full rounded-lg flex flex-col bg-white;
+    }
+
+  }
+}
+.productWrap{
+  @apply w-full flex flex-wrap p-10 gap-x-14 gap-y-5 justify-start;
+  @media (max-width: 1200px) {
+    @apply gap-x-10 justify-center;
+  }
+  @media (max-width: 800px) {
+    @apply gap-x-5 justify-center;
+  }
+}
+
+
+
+.rc-slider-handle:active {
+ @apply border-blue-400;
+  box-shadow: 0 0 5px #60a5fa;
+}
+
+.nameInput {
+  @apply w-full px-10 text-lg;
+  &:focus {
+    outline: none
+  }
+
+  @media (max-width: 700px) {
+    @apply px-2;
+  }
+}
+
+.codeInput {
+  @apply border-l border-gray-400 px-2 w-20 text-lg rounded-tr-lg;
+  &:focus {
+    outline: none
+  }
+}

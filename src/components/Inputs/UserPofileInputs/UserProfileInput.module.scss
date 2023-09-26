@@ -1,0 +1,7 @@
+.profileInput{
+  @apply border-b-2 border-b-slate-300 text-lg focus:outline-0 focus:border-b-cyan-800 transition-colors my-1;
+}
+
+.textarea{
+  @apply overflow-hidden resize-none h-auto;
+}

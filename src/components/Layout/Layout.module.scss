@@ -1,0 +1,16 @@
+$mainHeight: calc(100vh - (65px));
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @apply min-h-screen;
+}
+.main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: $mainHeight;
+}

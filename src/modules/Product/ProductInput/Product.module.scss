@@ -1,0 +1,13 @@
+.input{
+  @apply  bg-slate-100 rounded-lg text-lg p-2 border border-teal-800;
+  &:focus {
+    outline: none;
+    @apply outline outline-teal-500 border-teal-500;
+  }
+}
+
+
+
+.textarea{
+  @apply overflow-auto resize-none h-auto;
+}

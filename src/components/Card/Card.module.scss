@@ -1,0 +1,47 @@
+.Card {
+  @apply shadow-xl;
+  background: white;
+  width: 400px;
+  padding: 32px;
+  border-radius: 15px;
+  border: 0.1px solid black;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    @apply -mt-2
+  }
+}
+.profileCard{
+  @media (max-width: 850px) {
+    @apply p-5;
+  }
+  @media (max-width: 784px) {
+    @apply  px-7 ;
+  }
+  @media (max-width: 706px) {
+    @apply pt-2 pb-0 px-0;
+  }
+}
+
+.HelperCard {
+  @apply shadow-xl;
+  background: white;
+  padding: 15px;
+  height: 270px;
+  width: 300px;
+  border-radius: 15px;
+  border: 0.1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.submit {
+  &:not([disabled]) {
+    @apply hover:bg-blue-600 hover:transition-colors;
+  }
+
+  &[disabled] {
+    @apply bg-gray-100 text-gray-600 cursor-default;
+  }
+}

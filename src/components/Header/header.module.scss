@@ -1,0 +1,92 @@
+.header{
+  @apply bg-gray-50 w-full m-0;
+  height: 70px;
+
+}
+.nav{
+  @apply flex flex-row justify-between items-center py-3;
+}
+.navItems{
+    @apply flex justify-between;
+}
+
+.bigButton{
+  @apply p-2 ml-5 text-lg rounded-lg transition-colors;
+
+  &:not(.activeBigButton){
+   @apply hover:bg-slate-500 hover:text-slate-100;
+  }
+
+}
+
+.activeBigButton{
+  @apply bg-black text-slate-300 ;
+}
+
+.logo{
+  @apply bg-black text-white font-bold  text-2xl rounded-lg p-2 hover:bg-teal-600 hover:text-white transition-colors;
+
+  @media (max-width: 700px) {
+    @apply hidden;
+  }
+}
+
+
+.login{
+  @apply rounded bg-blue-500 text-white hover:bg-blue-600 transition-colors;
+  padding: 10px 15px;
+
+}
+
+.dropDownMenuButton{
+  @apply h-6 cursor-pointer border border-gray-300 hidden mr-5 p-2 transition-colors rounded-lg hover:bg-gray-100 hover:text-blue-400;
+  @media (max-width: 700px) {
+    @apply block;
+  }
+  &.activeButton{
+    @apply bg-gray-200 text-blue-500 ;
+  }
+}
+
+.hideIcon{
+  @media (max-width: 700px) {
+    @apply hidden;
+  }
+}
+
+.dropDownMenuItem{
+  @apply transition-colors p-3 rounded-lg hover:bg-gray-500 flex items-center justify-center text-center w-full h-full;
+}
+
+.navigationIcon {
+  @apply h-6 mx-0.5 p-2 rounded-lg cursor-pointer;
+  &:not(.activeNavigationIcon):hover{
+    @apply  transition-colors bg-slate-500 text-slate-100;
+  }
+}
+.activeNavigationIcon{
+  @apply bg-black text-slate-200 rounded-lg;
+}
+
+.dropDownMenu{
+  @apply absolute w-full h-screen -mt-1 bg-black bg-opacity-90 p-10 z-50;
+  @media (min-width: 700px) {
+    @apply hidden;
+  }
+}
+
+.dropDownIcon {
+  @apply h-6 p-2 rounded-lg cursor-pointer text-slate-100 ;
+}
+.active{
+  @apply bg-gray-300;
+}
+.notificationsBlock{
+  @apply flex items-center relative;
+}
+.notificationsBlock:hover .messageCount{
+  @apply invisible;
+}
+.messageCount{
+  @apply  h-5 w-5 text-center rounded-full transition-all;
+}

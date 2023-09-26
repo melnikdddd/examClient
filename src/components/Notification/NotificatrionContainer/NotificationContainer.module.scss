@@ -1,0 +1,43 @@
+.notifications {
+  @apply absolute w-72 bg-gray-500 bg-opacity-60 overflow-hidden rounded-lg shadow-2xl p-8 max-h-[600px]
+  flex flex-col;
+  backdrop-filter: blur(7px);
+
+  @media (max-width: 600px) {
+    @apply w-full h-full;
+  }
+}
+
+.button {
+  @apply text-gray-200 text-lg p-2 rounded-lg text-center transition-colors;
+
+  &:not(.activeFilter):hover {
+    @apply cursor-pointer bg-slate-500;
+  }
+
+  width: 50px;
+  border: 1px solid slategray;
+}
+
+.activeFilter {
+  @apply bg-gray-500 text-slate-400;
+}
+
+.notificationItems {
+  @apply flex flex-col  h-full overflow-auto pb-3;
+  direction: rtl;
+}
+
+.clearButton {
+  @apply text-gray-500 text-lg p-2 rounded-lg text-center bg-slate-400;
+
+  &:not([disabled]){
+    @apply text-gray-200 bg-transparent;
+  }
+  &:not([disabled]):hover {
+    @apply cursor-pointer bg-slate-400;
+  }
+
+  border: 1px solid slategray;
+}
+

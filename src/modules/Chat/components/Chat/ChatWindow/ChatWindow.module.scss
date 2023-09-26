@@ -1,0 +1,13 @@
+.ownerMessage{
+  @apply bg-cyan-600 text-slate-100 ;
+}
+.userMessage{
+  @apply bg-emerald-600 text-slate-100 ;
+}
+.timeStamp{
+  @apply text-gray-300 text-sm;
+}
+.message{
+  @apply p-3 flex flex-col rounded-xl  max-w-[70%];
+  word-wrap: break-word;
+}

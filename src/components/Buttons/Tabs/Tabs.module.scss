@@ -1,0 +1,22 @@
+.tabs{
+  @apply flex w-full bg-white justify-around rounded-tl-lg rounded-tr-lg border-b border-gray-300 ;
+
+  .tabsItem{
+    @apply text-xl p-4 flex-1 text-center;
+    &:not(.tabsActive){
+      @apply cursor-pointer;
+    }
+    &:not(.tabsActive):hover{
+      @apply bg-gray-100 text-gray-600 transition-colors;
+    }
+  }
+}
+.left{
+  @apply rounded-tl-lg;
+}
+.right {
+  @apply rounded-tr-lg;
+}
+.tabsActive{
+  @apply bg-gray-200 text-blue-600;
+}

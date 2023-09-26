@@ -1,0 +1,9 @@
+.buttonWrap{
+  @apply rounded-full p-1 absolute bg-white flex items-center ml-32;
+
+}
+.button{
+ @apply text-white  h-6 p-2 w-6 rounded-full transition-colors  bg-slate-800;
+}
+
+

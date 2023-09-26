@@ -1,0 +1,60 @@
+.removedButton {
+  &:not([disabled]) {
+    @apply hover:bg-red-600 cursor-pointer;
+  }
+
+  &[disabled] {
+    @apply bg-gray-100 text-gray-600 cursor-default;
+  }
+}
+
+.label {
+  @apply text-gray-600 text-base;
+}
+
+.submit {
+  &:not([disabled]) {
+    @apply hover:bg-blue-600 hover:transition-colors;
+  }
+
+  &[disabled] {
+    @apply bg-gray-100 text-gray-600 cursor-default;
+  }
+
+}
+
+.wrap {
+  @apply flex justify-between w-full h-full gap-2;
+  @media (max-width: 1120px) {
+    @apply flex-col;
+  }
+}
+
+.block {
+  @apply w-1/4 border rounded-lg flex flex-col p-7 bg-white shadow-md items-center justify-start;
+  @media (max-width: 1120px) {
+    @apply w-full py-10 px-44;
+  }
+  @media (max-width: 600px) {
+    @apply px-5;
+  }
+}
+
+.first {
+  @media (max-width: 1120px) {
+    @apply rounded-t-none;
+  }
+}
+
+.buttonBlock {
+  @apply border rounded-lg flex p-3 bg-white shadow-md items-center justify-center w-1/5 mt-5;
+  @media (max-width: 600px) {
+    @apply w-1/2;
+  }
+}
+
+.listNone {
+  @media (max-width: 1000px) {
+    @apply list-none;
+  }
+}

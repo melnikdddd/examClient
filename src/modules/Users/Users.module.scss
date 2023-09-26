@@ -1,0 +1,64 @@
+.filterBlock {
+  @apply flex flex-col w-full max-w-[291px] border-r border-gray-400 rounded-l-lg;
+
+  @media (max-width: 500px) {
+    @apply w-[250px];
+  }
+}
+
+.wrap{
+ @apply min-h-[80vh] rounded-lg flex flex-col mt-7 bg-white;
+}
+
+.filters {
+  @apply absolute flex flex-col bg-black bg-opacity-70 rounded-b-lg z-10;
+  margin-top: 52px;
+
+}
+
+.usersWrap{
+  @apply w-full flex flex-wrap p-10 gap-x-14 gap-y-5 justify-start;
+  @media (max-width: 800px) {
+    @apply gap-x-10 justify-center;
+  }
+  @media (max-width: 800px) {
+    @apply gap-x-2 justify-center;
+  }
+}
+
+.filterButton {
+  @apply text-lg text-center w-full h-full py-3 transition-colors cursor-pointer rounded-tl-lg;
+  &:not(.selected) {
+    @apply hover:bg-slate-200 hover:text-blue-400;
+  }
+
+
+  &.selected {
+    @apply text-blue-500 bg-slate-300;
+  }
+}
+
+.searchInput {
+  @apply w-full px-10 text-lg rounded-tr-lg;
+  &:focus {
+    outline: none
+  }
+  @media (max-width: 700px) {
+    @apply px-2;
+  }
+}
+
+.familiarUsersButtons {
+  @apply p-2 text-slate-600 text-lg transition-colors cursor-pointer rounded-lg bg-slate-50;
+  &:not(.selected, [disabled]) {
+    @apply hover:bg-slate-100;
+  }
+  &.selected{
+    @apply bg-slate-200 text-blue-500;
+  }
+  &:disabled{
+    @apply text-gray-500 bg-gray-200 cursor-default;
+  }
+
+  border: 1px solid gray;
+}

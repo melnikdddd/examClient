@@ -1,0 +1,12 @@
+.popupContainer{
+  @apply absolute w-72 rounded-lg p-8 flex flex-col;
+
+  visibility: hidden;
+  height: 800px;
+}
+.popup{
+  @apply flex flex-col h-full items-center w-full justify-center;
+  @media (max-width: 600px) {
+    @apply justify-end;
+  }
+}

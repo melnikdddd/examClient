@@ -1,0 +1,67 @@
+.userInformation {
+  .informationItem{
+
+  }
+}
+
+.ratingButton{
+  @apply w-1/2 py-1 flex justify-around items-center bg-gray-100 rounded;
+  border: 1px solid gray;
+  cursor: pointer;
+
+  &:not(.disabled):hover{
+    background: #EDF2F7;
+    transition: 0.3s;
+  }
+
+  &.left{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  &.right{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+  &.disabled{
+    cursor: default;
+    background: white;
+  }
+}
+
+.options{
+  @apply  bg-white flex-col absolute rounded-lg border border-gray-300 w-36 shadow-md select-none;
+  margin-left: 200px;
+  margin-top: -50px;
+}
+
+.optionItem{
+  @apply p-2 flex justify-between items-center bg-gray-50 text-slate-700 cursor-pointer;
+
+  &:not(.clicked):hover{
+    @apply hover:text-gray-600 hover:bg-gray-100 transition-colors;
+  }
+
+}
+.favorite{
+  @apply border border-b-gray-300;
+}
+.block{
+  @apply border border-b-gray-300 border-t-0;
+}
+.clicked{
+  &.favorite{
+    @apply bg-gray-200 text-blue-600 hover:bg-gray-300 transition-colors;
+
+  }
+  &.block{
+    @apply bg-gray-200 text-red-600 hover:bg-gray-300 transition-colors;
+
+  }
+  &.report{
+    @apply bg-gray-700 text-gray-100 cursor-default border-x-gray-700;
+  }
+
+}
+.report{
+  @apply rounded-b-lg ;
+}

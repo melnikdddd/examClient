@@ -1,0 +1,38 @@
+.ratingButton{
+  @apply  py-1 flex justify-around items-center bg-slate-100 rounded text-xl;
+  border: 1px solid gray;
+  cursor: pointer;
+  min-width: 100px;
+
+
+  &:not([disabled]):hover{
+    @apply bg-slate-300 transition-colors;
+  }
+
+  @media (max-width: 500px) {
+    @apply p-2 mt-4;
+  }
+
+  &[disabled]{
+    cursor: default;
+    background: white;
+  }
+}
+
+.wrap{
+ @apply flex;
+  @media (max-width: 500px){
+    @apply order-last justify-center basis-full mt-4 border-t border-gray-300 w-full;
+  }
+}
+.left{
+  @apply rounded-r-none border-r-0;
+
+}
+.right{
+  @apply rounded-l-none;
+}
+
+.clicked{
+  @apply bg-slate-400  transition-colors;
+}

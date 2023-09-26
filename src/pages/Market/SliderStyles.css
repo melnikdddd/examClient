@@ -1,0 +1,38 @@
+.customSlider {
+    @apply my-4;
+}
+
+.customSlider .rc-slider-handle {
+    @apply border-blue-500;
+}
+
+
+.customSlider .rc-slider-track {
+    @apply bg-blue-500;
+}
+
+.rc-slider-dot-active {
+    @apply bg-blue-800;
+}
+
+/* Изменение цвета неактивной полосы (track) на синий */
+.rc-slider-track.rc-slider-track-1 {
+    @apply bg-blue-500;
+}
+
+/* Изменение цвета для бара (bar) между бегунком и началом полосы на синий */
+.rc-slider-step .rc-slider-dot-active {
+    @apply border-blue-500;
+}
+
+/* Изменение цвета для точек (dots) на синий */
+.rc-slider-dot {
+    @apply bg-blue-300;
+    @apply border-blue-300;
+}
+
+/* Изменение цвета для активных точек (dots) на синий */
+.rc-slider-dot-active {
+    @apply bg-yellow-500;
+    @apply border-yellow-500;
+}

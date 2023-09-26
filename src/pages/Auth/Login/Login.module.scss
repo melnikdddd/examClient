@@ -1,0 +1,26 @@
+ .form{
+    .inputWrap{
+    }
+  }
+
+.buttonSubmit{
+  &:hover{
+    background: dodgerblue;
+    transition: 0.3s;
+  };
+}
+
+.registrationLink {
+  &:hover{
+    color: black;
+    transition: 0.3s;
+  }
+}
+
+.brandLink{
+  @apply border border-black rounded p-3  text-lg  text-white flex justify-center items-center;
+  &:hover{
+    background: darkcyan;
+    transition: 0.3s;
+  }
+}

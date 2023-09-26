@@ -1,0 +1,18 @@
+.helpButton{
+  @apply bg-black text-yellow-400 py-2 px-3 cursor-pointer transition-all border rounded-lg text-lg;
+  border: solid black 1px;
+  &:hover{
+    @apply bg-gray-900 text-yellow-200;
+  }
+  @media (max-width: 500px){
+    @apply text-xl;
+  }
+}
+
+.buttonWrap{
+  @apply flex justify-around w-full mt-20;
+
+  @media (max-width: 500px){
+    @apply flex-col gap-3;
+  }
+}

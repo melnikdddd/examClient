@@ -1,0 +1,9 @@
+.input{
+  @apply p-1 mt-1 bg-gray-100 border border-gray-200 text-lg rounded;
+  &:focus{
+    background: white;
+  }
+  &[disabled]{
+    @apply text-gray-500;
+  }
+}

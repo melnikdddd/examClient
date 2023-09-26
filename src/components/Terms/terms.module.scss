@@ -1,0 +1,9 @@
+.termsWrap{
+  @apply flex p-10 flex-col bg-white rounded-2xl border border-black w-full;
+  @media (max-width: 600px) {
+    @apply py-5 h-full w-[full];
+  }
+  @media (max-width: 550px) {
+    @apply w-[308px] h-[805px] overflow-auto ;
+  }
+}

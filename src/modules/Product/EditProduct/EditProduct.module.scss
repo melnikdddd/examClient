@@ -1,0 +1,20 @@
+.submit{
+  @apply py-3 px-4 rounded-lg transition-colors ;
+  &:not([disabled]){
+    @apply bg-teal-500  hover:bg-teal-600 cursor-pointer;
+  }
+  &[disabled]{
+    @apply bg-gray-300 text-gray-500;
+  }
+}
+
+.flexCol1100{
+  @media (max-width: 1100px) {
+    @apply flex-col
+  }
+}
+.flexCol768{
+  @media (max-width: 768px) {
+    @apply flex-col items-center;
+  }
+}
