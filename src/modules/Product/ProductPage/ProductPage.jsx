@@ -16,7 +16,7 @@ import moment from "moment";
 import RatingButtons from "../../../components/Buttons/RatingButton/RatingButtons";
 import {selectIsAuth} from "../../../store/slices/AuthSlice";
 
-import "./ProductPage.scss"
+import "./ProductPage.css"
 import {decodeBase64Image} from "../../../components/Images/utils";
 import {pushNotification} from "../../../store/slices/NotificationSlice";
 
