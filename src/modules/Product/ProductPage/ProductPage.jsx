@@ -16,7 +16,7 @@ import moment from "moment";
 import RatingButtons from "../../../components/Buttons/RatingButton/RatingButtons";
 import {selectIsAuth} from "../../../store/slices/AuthSlice";
 
-import  styles from "./ProductPage.module.scss"
+import "./ProductPage.scss"
 import {decodeBase64Image} from "../../../components/Images/utils";
 import {pushNotification} from "../../../store/slices/NotificationSlice";
 
@@ -98,24 +98,24 @@ function ProductPage(props) {
     return (
         <BackGround background={"linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%)"}>
             <Container>
-                <div className={styles.coreWrap}>
-                    <div className={styles.topContent}>
-                        <div className={styles.topInformation}>
+                <div className={"coreWrap"}>
+                    <div className={"topContent"}>
+                        <div className={"topInformation"}>
                             <ProductCover
-                                image={product.productCover}
-                                className={styles.cover}
+                                image={"productCover"}
+                                className={"cover"}
                                 imageClassName={"rounded-lg"}
                             />
-                            <div className={styles.topInf}>
+                            <div className={"topInf"}>
                                 <p className={"text-2xl capitalize"}>
                                     {product.title}
                                 </p>
-                                <p className={styles.price}>
+                                <p className={"price"}>
                                     {product.price === 0 ? "FREE" : product.price + "$"}
                                 </p>
                                 {
                                     isOwner ?
-                                        <div className={styles.editButton}>
+                                        <div className={"editButton"}>
                                             <Link to={`/products/${product._id}/edit`}
                                                   className={"flex justify-around items-center w-1/2 bg-blue-500 hover:bg-blue-600 transition-colors text-white px-3 py-2 rounded-lg"}>
                                                 <span className={"text-xl"}>
@@ -153,7 +153,7 @@ function ProductPage(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.userInformation}>
+                        <div className={"userInformation"}>
                             <div className={"text-lg flex items-center"}>
                                 <span className={"capitalize"}>
                                     {user.firstname.toLowerCase()}
@@ -180,8 +180,8 @@ function ProductPage(props) {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.middleContent}>
-                        <div className={styles.productText}>
+                    <div className={"middleContent"}>
+                        <div className={"productText"}>
                             <span className={"font-bold"}>
                                 Description
                             </span>
@@ -189,7 +189,7 @@ function ProductPage(props) {
                                 {product.description}
                             </span>
                         </div>
-                        <div className={styles.productText}>
+                        <div className={"productText"}>
                             <span className={"font-bold"}>
                                 Characteristics
                             </span>
@@ -198,8 +198,8 @@ function ProductPage(props) {
                             </span>
                         </div>
                     </div>
-                    <div className={styles.bottomContent}>
-                        <div className={styles.hideBlock}>
+                    <div className={"bottomContent"}>
+                        <div className={"hideBlock"}>
                             <div className={"flex flex-col mt-5 "}>
                                 <span>Since:</span>
                                 <span>{moment(product.createdAt).format("DD-MM-YYYY")}</span>
@@ -208,20 +208,20 @@ function ProductPage(props) {
                                 <span><FontAwesomeIcon icon={faEye}/> {product.viewsCount}</span>
                             </div>
                         </div>
-                        <div className={`flex flex-col mt-5 ${styles.hiddenInfo}`}>
+                        <div className={`flex flex-col mt-5 ${"hiddenInfo"}`}>
                             <span>Since:</span>
                             <span>{moment(product.createdAt).format("DD-MM-YYYY")}</span>
                         </div>
-                        <div className={styles.ratingButtons}>
+                        <div className={"ratingButtons"}>
                             <RatingButtons rateObj={product}
                                            ownerId={ownerId}
                                            isAuth={isAuth}
                                            entity={"products"}
                                            isDisabled={isOwner}
-                                           className={styles.buttons}
+                                           className={"buttons"}
                             />
                         </div>
-                        <div className={`mt-5 ${styles.hiddenInfo}`}>
+                        <div className={`mt-5 hiddenInfo`}>
                             <span><FontAwesomeIcon icon={faEye}/> {product.viewsCount}</span>
                         </div>
                     </div>
