@@ -89,7 +89,7 @@ function ProductPage(props) {
         return <BackGround background={"linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%)"}>
             <Container>
                 <CenterWrapper>
-                    <LoadingBlock className={"h-32"}/>
+                    <LoadingBlock className={"h-40 w-40"}/>
                 </CenterWrapper>
             </Container>
         </BackGround>
