@@ -38,7 +38,7 @@ function HomeCarouselBlock(props) {
                                 <h1 className={"text-2xl text-yellow-300"}>
                                     Observe these safety precautions:
                                 </h1>
-                                <ul className={"flex flex-col gap-3 mt-5 list-decimal"}>
+                                <ul className={"flex flex-col gap-3 mt-5 list-decimal px-3"}>
                                     <li><span>Do not share your account information with other users.</span></li>
                                     <li><span>Do not share payment information with other users.</span></li>
                                     <li><span>Do not pay in advance, only upon receipt of the goods.</span></li>
@@ -53,7 +53,7 @@ function HomeCarouselBlock(props) {
                     <div className={"w-full h-full bg-friendlyPeople bg-bottom bg-no-repeat pt-8"}>
                         <Container>
                             <div className={"text-center"}>
-                                <h1 className={"text-6xl font-bold"}>Be friendly</h1>
+                                <h1 className={"text-6xl font-bold bg-white bg-opacity-50"}>Be friendly</h1>
                             </div>
                         </Container>
                     </div>

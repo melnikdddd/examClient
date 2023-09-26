@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 
 function NeedaHelpBlock(props) {
     return (
-        <div id={props.id} className={"bg-yellow-400 text-black  h-[70vh] w-full"}>
+        <div id={props.id} className={"bg-yellow-400 text-black  h-[70vh] w-full pb-2"}>
             <Container>
                 <div className={"flex flex-col justify-around"}>
                     <div className={"flex justify-end mt-10"}>
