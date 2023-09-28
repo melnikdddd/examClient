@@ -1,4 +1,11 @@
-import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
+import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    Navigate,
+    Route,
+    RouterProvider,
+    useNavigate
+} from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Login from "./pages/Auth/Login/Login";
 import Registration from "./pages/Auth/Registration/Registration";
@@ -78,7 +85,6 @@ const routes = createBrowserRouter(createRoutesFromElements(
 ))
 
 function App (){
-
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(false);
 
@@ -88,6 +94,9 @@ function App (){
         };
         if (!isLoading){
             fetchData();
+        }
+        if (window.location.pathname === "/"){
+            window.location.pathname = "/home";
         }
     }, [dispatch]);
 
