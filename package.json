@@ -1,5 +1,5 @@
 {
-  "homepage": "https://exam-client.vercel.app",
+  "homepage": "https://exam-client.vercel.app/home",
   "name": "ui",
   "version": "0.1.0",
   "private": true,
