@@ -1,5 +1,5 @@
 {
-  "homepage": "https://exam-client.vercel.app/",
+  "homepage": "https://exam-client.vercel.app/home",
   "name": "ui",
   "version": "0.1.0",
   "private": true,
@@ -62,7 +62,6 @@
     "react-refresh": "^0.11.0",
     "react-router": "^6.13.0",
     "react-router-dom": "^6.13.0",
-    "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",

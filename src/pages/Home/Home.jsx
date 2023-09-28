@@ -1,8 +1,6 @@
 import HomeCarouselBlock from "./HomeCarouselBlock/HomeCarouselBlock";
 import WhyUsBlock from "./WhyUsBlock/WhyUsBlock";
 import NeedaHelpBlock from "./NeedaHelpBlock/NeedaHelpBlock";
-import {useEffect, useState} from "react";
-
 function Home() {
 
 
