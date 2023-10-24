@@ -1,6 +1,6 @@
 import BackGround from "../../components/Wrapper/BackGround/BackGround";
 import Container from "../../components/Wrapper/Container/Container";
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSliders} from "@fortawesome/free-solid-svg-icons";
 import Select from "../../components/Inputs/Select/Select";
@@ -178,12 +178,13 @@ function Market(props) {
 
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
-        console.log(selectedCategory);
-
         setRange({
             max: selectedCategory.maxPrice,
             min: selectedCategory.minPrice,
         });
+
+        console.log(range);
+
 
         setValue("currentMaxPrice", range.max);
         setValue("currentMinPrice", range.min);
