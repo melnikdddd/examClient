@@ -79,6 +79,7 @@ function Market(props) {
         setFindMessage("Not found.")
         setProducts([]);
     }
+
     const checkPrice = () => {
         if (!range?.min || !range?.max) {
             return;
@@ -92,21 +93,12 @@ function Market(props) {
 
         if (currentMaxPrice < currentMinPrice) {
             const tempMinPrice = currentMinPrice;
-
             setValue("currentMinPrice", currentMaxPrice);
             setValue("currentMaxPrice", tempMinPrice);
         }
 
         setParams(currentMinPrice, "minPrice");
         setParams(currentMaxPrice, "maxPrice");
-
-        const average = (range.min + range.max) / 2;
-
-        setMarks({
-            [range.min]: range.min,
-            [average]: average,
-            [range.max]: range.max,
-        });
     }
     const updatePrices  = () => {
         if (isSelectedTypeUpdate === false){
