@@ -67,6 +67,7 @@ function Market(props) {
     const find = async () => {
         checkPrice();
         updatePrices();
+
         const searchParamsObject = Object.fromEntries(searchParams);
 
         const response = await fetchGet(`/products?${new URLSearchParams(searchParamsObject)}`);
@@ -79,7 +80,6 @@ function Market(props) {
         setFindMessage("Not found.")
         setProducts([]);
     }
-
     const checkPrice = () => {
         if (!range?.min || !range?.max) {
             return;
@@ -100,10 +100,11 @@ function Market(props) {
         setParams(currentMinPrice, "minPrice");
         setParams(currentMaxPrice, "maxPrice");
     }
-    const updatePrices  = () => {
-        if (isSelectedTypeUpdate === false){
+    const updatePrices = () => {
+        if (isSelectedTypeUpdate === false) {
             return;
         }
+
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
         setRange({
@@ -119,9 +120,10 @@ function Market(props) {
             [range.max]: range.max,
         });
 
-
-        setValue("currentMaxPrice", range.max);
-        setValue("currentMinPrice", range.min);
+        reset({
+            currentMaxPrice: range.max,
+            currentMinPrice: range.min
+        })
 
         setIsFreeEnabled(range.min !== 0);
 
@@ -167,7 +169,7 @@ function Market(props) {
 
             setProductsTypesWithPrice(categoryWithPrice);
 
-            const selectedType =  searchParams.has("productsType") ? searchParams.get("productsType") : "All"
+            const selectedType = searchParams.has("productsType") ? searchParams.get("productsType") : "All"
             const {minPrice, maxPrice} = categoryWithPrice.find(category => category.name === selectedType)
 
             reset({
@@ -182,7 +184,6 @@ function Market(props) {
 
 
             const average = (minPrice + maxPrice) / 2;
-
             setMarks({
                 [minPrice]: minPrice,
                 [average]: average,
@@ -207,8 +208,8 @@ function Market(props) {
         if (!isLoading) {
             return;
         }
-
         setIsSelectedTypeUpdate(true);
+
     }, [selectedType]);
 
     useEffect(() => {
