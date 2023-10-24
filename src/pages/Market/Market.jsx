@@ -66,10 +66,8 @@ function Market(props) {
     }
     const find = async () => {
         checkPrice();
+        updatePricesWithCategory();
 
-        if (isSelectedTypeUpdate){
-            updatePricesWithCategory();
-        }
 
         const searchParamsObject = Object.fromEntries(searchParams);
         const response = await fetchGet(`/products?${new URLSearchParams(searchParamsObject)}`);
@@ -103,6 +101,11 @@ function Market(props) {
         setParams(currentMaxPrice, "maxPrice");
     }
     const updatePricesWithCategory = () => {
+
+        if (!isSelectedTypeUpdate){
+            return;
+        }
+
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
         const average = (selectedCategory.maxPrice + selectedCategory.minPrice) / 2;
@@ -150,6 +153,7 @@ function Market(props) {
     const handleSelectChange = (event) => {
         const selectedValue = event.target.value;
         setValue("selectedType", selectedValue);
+        setIsSelectedTypeUpdate(true);
     }
 
     useEffect(() => {
@@ -194,13 +198,6 @@ function Market(props) {
         }
         getProductsTypesWithPrice();
     }, []);
-
-    useEffect(() => {
-        if (!isLoading) {
-            return;
-        }
-        setIsSelectedTypeUpdate(true);
-    }, [selectedType]);
 
     useEffect(() => {
         if (!currentMinPrice && currentMinPrice !== 0) return;
