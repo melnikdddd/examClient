@@ -90,8 +90,10 @@ function Market(props) {
         }
 
         if (currentMaxPrice < currentMinPrice) {
-            setValue("currentMaxPrice", currentMaxPrice);
-            setValue("currentMinPrice", currentMinPrice);
+            const tempMinPrice = currentMinPrice;
+
+            setValue("currentMinPrice", currentMaxPrice);
+            setValue("currentMaxPrice", tempMinPrice);
         }
 
         setParams(currentMinPrice, "minPrice");
@@ -183,8 +185,6 @@ function Market(props) {
             max: selectedCategory.maxPrice,
             min: selectedCategory.minPrice,
         });
-
-        console.log(range);
 
 
         setValue("currentMaxPrice", range.max);
