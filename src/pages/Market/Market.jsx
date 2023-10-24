@@ -66,7 +66,10 @@ function Market(props) {
     }
     const find = async () => {
         checkPrice();
-        updatePrices();
+
+        if (isSelectedTypeUpdate){
+            updatePrices();
+        }
 
         const searchParamsObject = Object.fromEntries(searchParams);
 
@@ -101,14 +104,9 @@ function Market(props) {
         setParams(currentMaxPrice, "maxPrice");
     }
     const updatePrices = () => {
-        if (isSelectedTypeUpdate === false) {
-            return;
-        }
-
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
         const average = (selectedCategory.maxPrice + selectedCategory.minPrice) / 2;
-
         setMarks({
             [selectedCategory.minPrice]: selectedCategory.minPrice,
             [average]: average,
@@ -209,7 +207,6 @@ function Market(props) {
             return;
         }
         setIsSelectedTypeUpdate(true);
-
     }, [selectedType]);
 
     useEffect(() => {
@@ -264,7 +261,6 @@ function Market(props) {
             </Container>
         </BackGround>
     }
-
 
     return (
         <BackGround background={"linear-gradient(270deg, #8BC6EC 0%, #9599E2 100%)"}>
