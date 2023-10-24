@@ -195,8 +195,6 @@ const replaceUserIdToUser = (chatsInfo, users) => {
 
 
 export const selectUserData = state => state.userData.data;
-export const selectUserImage = state => state.userData.data.userAvatar;
-
 
 export const selectUserProducts = state => state.userData.products;
 

@@ -178,6 +178,8 @@ function Market(props) {
 
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
+        console.log(selectedType);
+
         setRange({
             max: selectedCategory.maxPrice,
             min: selectedCategory.minPrice,

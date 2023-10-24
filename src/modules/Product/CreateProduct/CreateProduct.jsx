@@ -180,10 +180,7 @@ function CreateProduct(props) {
         setIsLoading(true);
 
         const {productCover, ...dataForSend} = data
-
-
         const formData = new FormData();
-
 
         formData.append("productCover", uploadedProductCoverImage);
 

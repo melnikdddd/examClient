@@ -99,13 +99,12 @@ function Users(props) {
         if (response.data.users) {
             setUsers(response.data.users);
             setFindMessage("Not found.")
-
             return;
         }
         setFindMessage("Not found.")
         setUsers([]);
-
     }
+
     const toggleFamiliarUsersToSearchParams = (flag, familiarUsers) => {
         if (flag) {
             searchParams.delete("users");

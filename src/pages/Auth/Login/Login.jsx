@@ -68,11 +68,9 @@ function Login() {
     const identityValue = watch('identity');
     const passwordValue = watch('password');
 
-
     useEffect(() => {
         setIdentityValue(identityValue, {setRegex, setIdentityType, setMessage});
     }, [identityValue])
-
 
     const onSubmit = async (data) => {
         setIsLoading(true);
@@ -87,7 +85,6 @@ function Login() {
         if (responseData.success === false) {
             setIsLoading(false);
             errorHandler(loginErrors, responseData.status, setError, identityType);
-            // errorHandler(loginErrors, responseData.status, setError, );
             return;
         }
         const {token, userData, products} = getAuthResponseValues(responseData);
@@ -168,14 +165,14 @@ function Login() {
                             <hr className={"mx-2 flex-grow bg-gray-200 h-0.5"}/>
                         </div>
                         <div className={"flex flex-col w-full"}>
-                            <NavLink to={'/auth/google'} className={"bg-green-600 " + styles.brandLink}>
+                            <span className={"bg-green-600 " + styles.brandLink}>
                                 <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
                                 <span className={"ml-2"}>Continue with Google</span>
-                            </NavLink>
-                            <NavLink to={'/auth/telegram'} className={"mt-5 bg-blue-400 " + styles.brandLink}>
+                            </span>
+                            <span  className={"mt-5 bg-blue-400 " + styles.brandLink}>
                                 <FontAwesomeIcon icon={faTelegram}></FontAwesomeIcon>
                                 <span className={"ml-2"}>Continue with Telegram</span>
-                            </NavLink>
+                            </span>
                         </div>
                     </AuthCard>
                 </CenterWrapper>

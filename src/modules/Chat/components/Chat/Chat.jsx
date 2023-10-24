@@ -122,6 +122,7 @@ function Chat(props) {
         resetInput();
     }
 
+
     if (!user) {
         return <div
             className={`h-full bg-opacity-40 bg-white rounded-lg max-h-[678px] shadow-md w-full  ${props.className}`}>

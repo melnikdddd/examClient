@@ -78,7 +78,6 @@ export const login = (dispatch, token, userData, products) => {
 
     Socket.createConnect(userData, dispatch);
 
-    //setUserDataInLocalStorage(userData);
     window.localStorage.setItem('token', token);
 }
 export const logout = (dispatch) => {

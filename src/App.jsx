@@ -43,7 +43,6 @@ const routes = createBrowserRouter(createRoutesFromElements(
             }/>
         </Route>
         <Route path={'/market'} element={<Market/>}/>
-
         <Route path={"/products"}>
             <Route path={":id"} exact element={
                 <PrivateRoute isAuthNeed={true}>
@@ -77,8 +76,6 @@ const routes = createBrowserRouter(createRoutesFromElements(
             }>
             </Route>
         </Route>
-        <Route path={"/terms"}/>
-        <Route path={"/contacts"}/>
         <Route path="*" element={<Error error={"Not found"}/>} />
         <Route path={"/error"} element={<Error error={"Not found"}/>} />
     </Route>

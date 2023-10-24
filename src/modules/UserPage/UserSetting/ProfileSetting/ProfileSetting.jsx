@@ -135,14 +135,12 @@ function ProfileSetting(props) {
 
         const {userAvatar, isImageRemoved, ...sendData} = data;
 
-
         if (uploadedImage) {
             formData.append("userAvatar", uploadedImage);
             formData.append("imageOperation", "replace");
         } else if (isImageRemoved) {
             formData.append("imageOperation", "remove");
         }
-
 
         for (const [key, value] of Object.entries(sendData)) {
             if (dirtyFields[key]) {
@@ -151,7 +149,6 @@ function ProfileSetting(props) {
         }
 
         const response = await fetchUpdate(`/users/${owner._id}`, formData);
-
 
         if (response.success === true) {
             for (const [field, value] of Object.entries(sendData)) {
