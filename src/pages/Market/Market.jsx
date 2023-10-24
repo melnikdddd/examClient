@@ -179,30 +179,32 @@ function Market(props) {
         if (!isLoading) {
             return;
         }
+        const changeSelectedType = async () => {
+            const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
-        const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
+            setRange({
+                max: selectedCategory.maxPrice,
+                min: selectedCategory.minPrice,
+            });
 
-        setRange({
-            max: selectedCategory.maxPrice,
-            min: selectedCategory.minPrice,
-        });
+            const average = (range.min + range.max) / 2;
 
-        const average = (range.min + range.max) / 2;
+            setMarks({
+                [range.min]: range.min,
+                [average]: average,
+                [range.max]: range.max,
+            });
 
-        setMarks({
-            [range.min]: range.min,
-            [average]: average,
-            [range.max]: range.max,
-        });
+            setValue("currentMaxPrice", range.max);
+            setValue("currentMinPrice", range.min);
 
+            setIsFreeEnabled(range.min !== 0);
 
-        setValue("currentMaxPrice", range.max);
-        setValue("currentMinPrice", range.min);
+            setParams(selectedType, "productsType");
 
-        setIsFreeEnabled(range.min !== 0);
-
-
-        setParams(selectedType, "productsType");
+            await find();
+        }
+        changeSelectedType();
 
     }, [selectedType]);
 
