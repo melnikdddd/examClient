@@ -98,6 +98,14 @@ function Market(props) {
 
         setParams(currentMinPrice, "minPrice");
         setParams(currentMaxPrice, "maxPrice");
+
+        const average = (range.min + range.max) / 2;
+
+        setMarks({
+            [range.min]: range.min,
+            [average]: average,
+            [range.max]: range.max,
+        });
     }
     const setParams = (value, field) => {
         if (searchParams.has(field)) {
@@ -179,7 +187,6 @@ function Market(props) {
             return;
         }
 
-
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
         setRange({
@@ -192,14 +199,6 @@ function Market(props) {
         setValue("currentMinPrice", range.min);
 
         setIsFreeEnabled(range.min !== 0);
-
-        const average = (range.min + range.max) / 2;
-
-        setMarks({
-            [range.min]: range.min,
-            [average]: average,
-            [range.max]: range.max,
-        })
 
         setParams(selectedType, "productsType");
 
