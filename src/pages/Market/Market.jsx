@@ -68,11 +68,10 @@ function Market(props) {
         checkPrice();
 
         if (isSelectedTypeUpdate){
-            updatePrices();
+            updatePricesWithCategory();
         }
 
         const searchParamsObject = Object.fromEntries(searchParams);
-
         const response = await fetchGet(`/products?${new URLSearchParams(searchParamsObject)}`);
 
         if (response.data.products) {
@@ -103,7 +102,7 @@ function Market(props) {
         setParams(currentMinPrice, "minPrice");
         setParams(currentMaxPrice, "maxPrice");
     }
-    const updatePrices = () => {
+    const updatePricesWithCategory = () => {
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
         const average = (selectedCategory.maxPrice + selectedCategory.minPrice) / 2;
@@ -126,6 +125,7 @@ function Market(props) {
         setIsFreeEnabled(selectedCategory.minPrice !== 0);
 
         setParams(selectedType, "productsType");
+
         setIsSelectedTypeUpdate(false);
     }
     const setParams = (value, field) => {
@@ -150,13 +150,6 @@ function Market(props) {
     const handleSelectChange = (event) => {
         const selectedValue = event.target.value;
         setValue("selectedType", selectedValue);
-
-        if (searchParams.has("productsType")) {
-            searchParams.set("productsType", selectedValue);
-        } else {
-            searchParams.append("productsType", selectedValue);
-        }
-        setSearchParams(searchParams);
     }
 
     useEffect(() => {
