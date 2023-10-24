@@ -187,6 +187,7 @@ function Market(props) {
         });
 
 
+        console.log(range.min);
         setValue("currentMaxPrice", range.max);
         setValue("currentMinPrice", range.min);
 
