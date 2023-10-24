@@ -178,7 +178,7 @@ function Market(props) {
 
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
-        console.log(selectedType);
+        console.log(selectedCategory);
 
         setRange({
             max: selectedCategory.maxPrice,
