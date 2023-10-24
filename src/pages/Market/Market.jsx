@@ -90,9 +90,10 @@ function Market(props) {
         }
 
         if (currentMaxPrice < currentMinPrice) {
-            setValue("currentMaxPrice", currentMinPrice);
-            setValue("currentMinPrice", currentMaxPrice);
+            setValue("currentMaxPrice", currentMaxPrice);
+            setValue("currentMinPrice", currentMinPrice);
         }
+
         setParams(currentMinPrice, "minPrice");
         setParams(currentMaxPrice, "maxPrice");
     }
