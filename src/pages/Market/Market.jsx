@@ -182,8 +182,6 @@ function Market(props) {
 
         const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
-        console.log(selectedCategory);
-
 
         setRange({
             max: selectedCategory.maxPrice,
@@ -191,8 +189,11 @@ function Market(props) {
         });
 
 
-        setValue("currentMaxPrice", range.max);
-        setValue("currentMinPrice", range.min);
+        reset({
+            selectedType: selectedType,
+            currentMinPrice: range.min,
+            currentMaxPrice: range.max,
+        })
 
         setIsFreeEnabled(range.min !== 0);
 
