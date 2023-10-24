@@ -26,6 +26,7 @@ function Market(props) {
     const [isLoading, setIsLoading] = useState(false);
 
     const [isFiltersSelected, setIsFiltersSelected] = useState(false);
+    const [isSelectedTypeUpdate, setIsSelectedTypeUpdate] = useState(false);
 
     const [isFreeEnabled, setIsFreeEnabled] = useState(false);
 
@@ -64,8 +65,8 @@ function Market(props) {
         await find();
     }
     const find = async () => {
-
         checkPrice();
+        updatePrices();
         const searchParamsObject = Object.fromEntries(searchParams);
 
         const response = await fetchGet(`/products?${new URLSearchParams(searchParamsObject)}`);
@@ -99,6 +100,41 @@ function Market(props) {
         setParams(currentMinPrice, "minPrice");
         setParams(currentMaxPrice, "maxPrice");
 
+        const average = (range.min + range.max) / 2;
+
+        setMarks({
+            [range.min]: range.min,
+            [average]: average,
+            [range.max]: range.max,
+        });
+    }
+    const updatePrices  = () => {
+        if (isSelectedTypeUpdate === false){
+            return;
+        }
+        const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
+
+        setRange({
+            max: selectedCategory.maxPrice,
+            min: selectedCategory.minPrice,
+        });
+
+        const average = (range.min + range.max) / 2;
+
+        setMarks({
+            [range.min]: range.min,
+            [average]: average,
+            [range.max]: range.max,
+        });
+
+
+        setValue("currentMaxPrice", range.max);
+        setValue("currentMinPrice", range.min);
+
+        setIsFreeEnabled(range.min !== 0);
+
+        setParams(selectedType, "productsType");
+        setIsSelectedTypeUpdate(false);
     }
     const setParams = (value, field) => {
         if (searchParams.has(field)) {
@@ -179,33 +215,8 @@ function Market(props) {
         if (!isLoading) {
             return;
         }
-        const changeSelectedType = async () => {
-            const selectedCategory = productsTypesWithPrice.find(product => product.name === selectedType);
 
-            setRange({
-                max: selectedCategory.maxPrice,
-                min: selectedCategory.minPrice,
-            });
-
-            const average = (range.min + range.max) / 2;
-
-            setMarks({
-                [range.min]: range.min,
-                [average]: average,
-                [range.max]: range.max,
-            });
-
-            setValue("currentMaxPrice", range.max);
-            setValue("currentMinPrice", range.min);
-
-            setIsFreeEnabled(range.min !== 0);
-
-            setParams(selectedType, "productsType");
-
-            await find();
-        }
-        changeSelectedType();
-
+        setIsSelectedTypeUpdate(true);
     }, [selectedType]);
 
     useEffect(() => {
